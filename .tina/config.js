@@ -1,4 +1,13 @@
 import { defineConfig, defineSchema } from "tinacms";
+import {
+  BasicCards,
+  Hero,
+  Timeline,
+  CrazyBalls,
+  ProjectShowcase,
+  Testimonial,
+  Contact,
+} from "./Templates/Blocks";
 
 const schema = defineSchema({
   collections: [
@@ -9,10 +18,29 @@ const schema = defineSchema({
       format: "mdx",
       fields: [
         {
-          name: "body",
-          label: "Main Content",
-          type: "rich-text",
-          isBody: true,
+          name: "pageTitle",
+          label: "Seiten Titel (SEO)",
+          type: "string",
+        },
+        {
+          name: "pageDescription",
+          label: "Seiten Beschreibung (SEO)",
+          type: "string",
+        },
+        {
+          name: "sectionBlocks",
+          label: "Sektionen",
+          type: "object",
+          list: true,
+          templates: [
+            BasicCards,
+            Hero,
+            Timeline,
+            CrazyBalls,
+            ProjectShowcase,
+            Testimonial,
+            Contact,
+          ],
         },
       ],
       ui: {
