@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { useTina } from "tinacms/dist/react";
 
-import { client } from "../../../.tina/__generated__/client";
+import { client } from "../../.tina/__generated__/client";
 import { SectionBlocks, Layout } from "../components";
 
 const index = (props) => {
