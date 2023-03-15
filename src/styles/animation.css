@@ -12,6 +12,25 @@
   }
 }
 
+@keyframes gradient-bg {
+  from {
+    background-position: top;
+  }
+
+  50% {
+    background-position: center;
+  }
+
+  to {
+    background-position: bottom;
+  }
+}
+
+.blob-glow {
+  @apply bg-gradient-to-r from-violet-900/50 to-rose-900/50 absolute w-20 rounded-full h-20;
+  filter: blur(10px);
+}
+
 #mouse-blob {
   @apply bg-gradient-to-r from-violet-900/50 to-rose-900/50;
   height: 34vmax;
@@ -32,4 +51,9 @@
   top: 0;
   position: fixed;
   backdrop-filter: blur(12vmax);
+}
+
+.gradient-bg-animation {
+  background-size: 200%;
+  animation: rotate 20s infinite;
 }

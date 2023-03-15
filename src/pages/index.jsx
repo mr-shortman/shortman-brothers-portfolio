@@ -13,7 +13,7 @@ const index = (props) => {
   });
 
   return (
-    <Layout>
+    <Layout pageTitle={data?.page?.pageTitle}>
       <SectionBlocks blocks={data.page?.sectionBlocks} />
     </Layout>
   );

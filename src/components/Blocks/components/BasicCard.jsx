@@ -40,7 +40,7 @@ function BasicCard({ data }) {
       />
       <div className="mt-20 flex flex-wrap gap-10  justify-center md:justify-start">
         {data?.cards?.map((service, idx) => (
-          <Card key={service.title} index={idx} {...service} />
+          <Card key={`${service.name}`} index={idx} {...service} />
         ))}
       </div>
     </>

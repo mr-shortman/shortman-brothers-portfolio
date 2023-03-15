@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import PageProgressNavBar from "./PageProgressNavBar";
 import MouseBlob from "./MouseBlob";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, pageTitle }) => (
   <motion.div
     initial={{ x: 300, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
@@ -16,7 +16,7 @@ const Layout = ({ children }) => (
     }}
     className="relative  bg-primary"
   >
-    <Navbar />
+    <Navbar pageTitle={pageTitle} />
     <PageProgressNavBar />
     <MouseBlob />
     <main className="z-20">{children}</main>

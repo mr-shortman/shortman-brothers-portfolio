@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -11,11 +11,11 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
+          max: 20,
+          scale: 1.05,
+          speed: 250,
         }}
-        className=" bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className={` bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full`}
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -55,11 +55,13 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              {tag.name}
-            </p>
-          ))}
+          {tags
+            ? tags.map((tag) => (
+                <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+                  {tag.name}
+                </p>
+              ))
+            : null}
         </div>
       </Tilt>
     </motion.div>
@@ -79,10 +81,7 @@ function ProjectShowcase({ data }) {
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
           variants={fadeIn("", "", 0.1, 1)}
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum
-          obcaecati rem quo expedita ullam voluptates aspernatur corrupti
-          repellendus? Laboriosam, ipsum possimus! Quos voluptatem, fuga
-          inventore et iusto labore quae! At!
+          {data?.description}
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">

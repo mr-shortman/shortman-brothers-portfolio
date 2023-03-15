@@ -3,31 +3,43 @@ import Link from "next/link";
 import { styles } from "../../../style";
 import { navLinks } from "../../../constants";
 import { logo, menu, close } from "../../../assets";
+import Menu from "./Menu";
+import { motion } from "framer-motion";
 
-const Navbar = () => {
+const Navbar = ({ pageTitle }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [background, setBackground] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 250 ? setBackground(true) : setBackground(false);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+    <motion.nav
+      whileHover={{ background: "transparent" }}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-transparent`}
     >
+      <div
+        className={`w-full bg-black blur-lg h-28 fixed -z-10 left-0 -top-10 transition-opacity duration-300 ${
+          background ? "opacity-1" : "opacity-0"
+        }`}
+      ></div>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link href={"/"}>
-          <div
-            className="flex items-center gap-2"
-            onClick={() => {
-              setActive(""), window.scrollTo(0, 0);
-            }}
-          >
-            {}
-            <img src={logo.src} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold cursor-pointer flex">
-              Pablo &nbsp;{" "}
-              <span className="sm:block hidden">| Shortman Brothers</span>
-            </p>
-          </div>
-        </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <div className="flex w-full">
+          <Menu />
+          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+            <span className="sm:block hidden">
+              {"\u200b \u200b | " + pageTitle}
+            </span>
+          </p>
+        </div>
+        {/* <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map(({ path, title }) => (
             <li
               key={`${path}`}
@@ -39,7 +51,8 @@ const Navbar = () => {
               <Link href={`/${path}`}>{title}</Link>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <div className="w-full" />
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
@@ -71,7 +84,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

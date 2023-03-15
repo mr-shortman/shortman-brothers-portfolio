@@ -27,6 +27,7 @@ function MouseBlob() {
     };
 
     const handleScroll = (e) => {
+      console.log("scroll");
       move({ x: window.innerWidth / 2, y: window.scrollY + 250 });
     };
 
@@ -40,7 +41,7 @@ function MouseBlob() {
   }, []);
 
   return (
-    <div className="">
+    <div className="z-50">
       <div id="mouse-blob"></div>
       <div id="mouse-blob-blur"></div>
     </div>

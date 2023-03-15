@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useTransition, useEffect, useState } from "react";
+import { Canvas, Html } from "@react-three/fiber";
 import {
   Decal,
   Float,
@@ -40,14 +40,32 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon, color }) => (
-  <Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
+const BallWrapper = (props) => {
+  const [isPending, startTransition] = useTransition();
+  const { icon, color } = props;
+
+  useEffect(() => {
+    if (isPending) {
+      startTransition(() => props.onClick());
+    }
+  }, [isPending, props]);
+
+  return (
+    // <html onClick={() => !isPending && startTransition(() => props.onClick())}>
     <Suspense fallback={<CanvasLoader />}>
       <OrbitControls enableZoom={false} />
       <Ball icon={icon} color={color} />
     </Suspense>
-    <Preload all />
-  </Canvas>
-);
+    // {isPending && <CanvasLoader />}
+    //</html>
+  );
+};
+
+const BallCanvas = ({ icon, color }) =>
+  null;
+  //<Canvas frameloop="demand" gl={{ preserveDrawingBuffer: true }}>
+  //<BallWrapper icon={icon} color={color} />
+  //<Preload all />
+  //</Canvas>
 
 export default BallCanvas;
