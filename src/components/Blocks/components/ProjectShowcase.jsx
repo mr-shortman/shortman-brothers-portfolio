@@ -21,7 +21,7 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
           <img
             src={image}
             alt={name}
-            className="h-full w-full object-contain rounded-2xl"
+            className="h-full w-full object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover gap-2">
             {links?.github ? (
@@ -72,8 +72,8 @@ function ProjectShowcase({ data }) {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Meine Arbeit</p>
-        <h2 className={styles.sectionHeadText}>Projekte.</h2>
+        <p className={styles.sectionSubText}>{data?.label}</p>
+        <h2 className={styles.sectionHeadText}>{data?.header}</h2>
       </motion.div>
 
       <div className="w-full flex">

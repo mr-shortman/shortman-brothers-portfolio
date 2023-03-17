@@ -44,13 +44,14 @@
   opacity: 0.8;
 }
 
-#mouse-blob-blur {
+.mouse-blob-blur {
   height: 100%;
   width: 100%;
   left: 0;
   top: 0;
   position: fixed;
   backdrop-filter: blur(12vmax);
+  background: url("/uploads/broken-glas.png");
 }
 
 .gradient-bg-animation {

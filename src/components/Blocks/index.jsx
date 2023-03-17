@@ -8,6 +8,7 @@ import {
   ProjectShowcase,
   Testimonials,
   Contact,
+  OffsetCards,
 } from "./components";
 
 function SectionBlocks(props) {
@@ -23,6 +24,14 @@ function SectionBlocks(props) {
                   return (
                     <React.Fragment key={i + block.__typename}>
                       <Hero data={block} />
+                    </React.Fragment>
+                  );
+                case "PageSectionBlocksOffsetCards":
+                  return (
+                    <React.Fragment key={i + block.__typename}>
+                      <DynamicSectionWrapper id={_id}>
+                        <OffsetCards data={block} />
+                      </DynamicSectionWrapper>
                     </React.Fragment>
                   );
                 case "PageSectionBlocksBasicCards":

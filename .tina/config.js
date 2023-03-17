@@ -7,6 +7,7 @@ import {
   ProjectShowcase,
   Testimonial,
   Contact,
+  OffsetCards,
 } from "./Templates/Blocks";
 
 const schema = defineSchema({
@@ -40,6 +41,7 @@ const schema = defineSchema({
             ProjectShowcase,
             Testimonial,
             Contact,
+            OffsetCards,
           ],
         },
       ],

@@ -7,6 +7,7 @@ import { EarthCanvas } from "../../canvas";
 import { slideIn } from "../../../utils/motion";
 import { StarsCanvas } from "../../canvas";
 import { fallbackScene } from "../../../utils/spline";
+import LoadLazy3D from "../../LoadLazy3D";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
 
 const Form = ({ emailTo, scene }) => {
@@ -109,14 +110,16 @@ const Form = ({ emailTo, scene }) => {
           </button>
         </form>
       </motion.div>
-      <motion.div
-        className="w-full xl:flex-1 xl:h-audo md:h-[550px] h-[350px] "
-        variants={slideIn("right", "tween", 0, 2, 1)}
-      >
-        <Suspense fallback={<div>Loading...</div>}>
-          <Spline className="" scene={`${scene ? scene : fallbackScene}`} />
-        </Suspense>
-      </motion.div>
+      <LoadLazy3D delay={10000}>
+        <motion.div
+          className="w-full xl:flex-1 xl:h-audo md:h-[550px] h-[350px] "
+          variants={slideIn("right", "tween", 0, 2, 1)}
+        >
+          <Suspense fallback={<div>Loading...</div>}>
+            <Spline className="" scene={`${scene ? scene : fallbackScene}`} />
+          </Suspense>
+        </motion.div>
+      </LoadLazy3D>
     </div>
   );
 };

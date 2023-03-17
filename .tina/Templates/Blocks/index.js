@@ -5,6 +5,7 @@ import _CrazyBalls from "./CrazyBalls";
 import _ProjectShowcase from "./ProjectShowcase";
 import _Testimonial from "./Testimonial";
 import _Contact from "./Contact";
+import _OffsetCards from "./OffsetCards";
 
 const addId = (obj) => {
   obj.fields.push({ name: "id", label: "Id", type: "string" });
@@ -18,6 +19,7 @@ const CrazyBalls = addId(_CrazyBalls);
 const ProjectShowcase = addId(_ProjectShowcase);
 const Testimonial = addId(_Testimonial);
 const Contact = addId(_Contact);
+const OffsetCards = addId(_OffsetCards);
 
 export {
   Hero,
@@ -27,4 +29,5 @@ export {
   ProjectShowcase,
   Testimonial,
   Contact,
+  OffsetCards,
 };

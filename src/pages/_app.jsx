@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
   const intro = true;
   return (
-    <AnimatePresence initial={false}>
+    <AnimatePresence>
       {/* {intro ? <InitialPageLoader /> : null} */}
       <Component {...pageProps} />
     </AnimatePresence>

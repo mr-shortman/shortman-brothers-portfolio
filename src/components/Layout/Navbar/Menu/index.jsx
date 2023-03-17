@@ -60,7 +60,7 @@ const menuBackgroundVariant = {
     zIndex: -1,
     transition: {
       duration: TRANSITION_DURATION,
-      delay: TRANSITION_DELAY * 10 + TRANSITION_DELAY,
+      delay: 12,
     },
   },
 };
@@ -195,7 +195,7 @@ function Menu() {
   const [showMenu, setShowMenu] = useState("closed");
   return (
     <>
-      <div className="flex   stroke-black-200 ">
+      <div className="flex stroke-black-200 ">
         {/* S */}
         <div className="relative group" onClick={() => setShowMenu("open")}>
           <motion.svg
@@ -247,14 +247,15 @@ function Menu() {
 
       {/* Menu Open */}
       <motion.div
-        className={`fixed w-full h-full bg-black left-0 top-0 z-50`}
+        className={`fixed w-full h-full left-0 top-0 z-50 text-white/50`}
         variants={menuBackgroundVariant}
         initial="closed"
         animate={showMenu}
       >
+        <motion.div className="absolute -z-10 w-full h-full left-0 top-0 mouse-blob-blur" />
         {/* Menu Content */}
         <motion.div className="menu-nav-grid">
-          <div className="absolute max-w-xs top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-full hover:rotate-12 transition-all duration-300">
+          <div className="group absolute max-w-xs top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rounded-full hover:rotate-12 transition-all duration-300">
             <motion.svg
               className="w-full"
               onClick={() => setShowMenu("closed")}
@@ -266,7 +267,14 @@ function Menu() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
             >
-              <motion.circle cx="153.5" cy="153.5" r="153.5" fill="white" />
+              <motion.circle
+                cx="153.5"
+                cy="153.5"
+                r="153.5"
+                className={
+                  "fill-neutral-300 group-hover:fill-white transition-colors duration-700"
+                }
+              />
               <motion.path
                 d="M217.638 122.75C217.524 112.5 214.507 92 203.345 92C192.182 92 185.308 92 183.266 92H103.293C90.7015 94.25 82.1937 139.25 99.8899 154.25H209.13C217.638 154.25 226.146 215 203.345 215H99.8899C96.3734 211 89 200.75 89 191L89 188.75"
                 stroke="black"
@@ -284,18 +292,22 @@ function Menu() {
           {NAVIGATOR.map((item, idx) => (
             <Link href={`${item.path}`} key={`menu-box-grid-item-${idx}`}>
               <motion.div
-                className={`menu-box-grid-item-${idx + 1}`}
-                style={{
-                  background: `${item.bg}`,
-                  color: `${item.color}`,
-                }}
+                className={`menu-box-grid-item-${
+                  idx + 1
+                }  hover:text-white hover:bg-white/10  text-5xl hover:text-8xl transition-colors duration-700  ${
+                  showMenu ? "bg-opacity-20" : "bg-opacity-100"
+                } bg-black`}
+                // style={{
+                //   background: `${item.bg}`,
+                //   color: `${item.color}`,
+                // }}
                 variants={gridBoxVariants[idx]}
                 initial="closed"
                 animate={showMenu}
-                whileHover={{ background: "#fec046", color: "#C1554E" }}
+                // whileHover={{ background: "#fec046", color: "#C1554E" }}
               >
                 <div className="flex w-full h-full jusitfy-center items-center cursor-pointer">
-                  <h3 className="text-8xl font-black tracking-widest text-center hover:animate-shake  w-fit mx-auto">
+                  <h3 className="font-black tracking-widest text-center   w-fit mx-auto transition-all duration-700">
                     {` ${item.label}`}
                   </h3>
                 </div>

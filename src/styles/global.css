@@ -15,13 +15,18 @@
   color-scheme: dark;
 }
 body {
-  @apply overflow-x-hidden;
+  overflow-x: hidden;
 }
 
-.hero-pattern {
-  background-image: url("/src/assets/herobg.png");
-  background-size: cover;
-  background-position: center;
+.hero-gradient {
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1)
+  );
 }
 
 .hash-span {

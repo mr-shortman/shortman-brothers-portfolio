@@ -43,7 +43,7 @@ function MouseBlob() {
   return (
     <div className="z-50">
       <div id="mouse-blob"></div>
-      <div id="mouse-blob-blur"></div>
+      <div id="mouse-blob-blur" className="mouse-blob-blur"></div>
     </div>
   );
 }

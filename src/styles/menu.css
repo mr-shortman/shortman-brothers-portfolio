@@ -1,5 +1,5 @@
 .menu-nav-grid {
-  --border-color: #ffffff;
+  --border-color: #ffffff50;
   display: grid;
   grid-template-columns: repeat(2, 0.5fr) 1fr;
   grid-template-rows: 1fr repeat(2, 0.5fr);
@@ -20,10 +20,12 @@
 .menu-box-grid-item-2 {
   grid-area: 1 / 3 / 2 / 4;
   border-left: 2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
 }
 .menu-box-grid-item-3 {
   grid-area: 2 / 3 / 4 / 4;
   border-left: 2px solid var(--border-color);
+  border-top: 2px solid var(--border-color);
 }
 .menu-box-grid-item-4 {
   grid-area: 2 / 2 / 4 / 3;
