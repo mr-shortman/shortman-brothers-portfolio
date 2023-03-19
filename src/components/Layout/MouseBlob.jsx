@@ -27,7 +27,6 @@ function MouseBlob() {
     };
 
     const handleScroll = (e) => {
-      console.log("scroll");
       move({ x: window.innerWidth / 2, y: window.scrollY + 250 });
     };
 

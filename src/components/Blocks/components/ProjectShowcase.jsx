@@ -7,6 +7,11 @@ import { github, link } from "../../../assets";
 import { fadeIn, textVariant } from "../../../utils/motion";
 
 const ProjectCard = ({ index, name, description, tags, image, links }) => {
+  const tagColors = [
+    "blue-text-gradient",
+    "green-text-gradient",
+    "pink-text-gradient",
+  ];
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -15,13 +20,13 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
           scale: 1.05,
           speed: 250,
         }}
-        className={` bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full`}
+        className={` bg-tertiary/75 p-5 rounded-2xl sm:w-[360px] w-full`}
       >
         <div className="relative w-full h-[230px]">
           <img
             src={image}
             alt={name}
-            className="h-full w-full object-cover rounded-2xl"
+            className="h-full w-full object-cover rounded-2xl shadow-lg shadow-black/10 "
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover gap-2">
             {links?.github ? (
@@ -57,8 +62,13 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
         <div className="mt-4 flex flex-wrap gap-2">
           {tags
             ? tags.map((tag) => (
-                <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-                  {tag.name}
+                <p
+                  key={tag}
+                  className={`text-[14px]  ${
+                    tagColors[Math.floor(Math.random() * tagColors.length)]
+                  }`}
+                >
+                  {tag}
                 </p>
               ))
             : null}

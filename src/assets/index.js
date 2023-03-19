@@ -32,7 +32,9 @@ import tripguide from "./tripguide.png";
 import link from "./link.png";
 
 import placeholder_design from "./placeholder_design.png";
+
 import web_developer from "./lottie/bg-texture.json";
+import ball_on_ladder from "./lottie/ball-on-ladder.json";
 
 export {
   logo,
@@ -65,4 +67,5 @@ export {
   link,
   placeholder_design,
   web_developer,
+  ball_on_ladder,
 };
