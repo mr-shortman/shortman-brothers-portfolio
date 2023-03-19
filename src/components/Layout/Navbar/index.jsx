@@ -17,11 +17,6 @@ const Navbar = ({ pageTitle }) => {
       />
       <div className="flex w-full justify-center">
         <Menu />
-        {/* <p className="text-white text-[18px] font-bold cursor-pointer flex">
-          <span className="sm:block hidden">
-            {"\u200b \u200b | " + pageTitle}
-          </span>
-        </p> */}
       </div>
     </motion.nav>
   );

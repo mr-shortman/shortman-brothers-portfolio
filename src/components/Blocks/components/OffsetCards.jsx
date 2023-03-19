@@ -40,8 +40,10 @@ const OffsetCard = ({
       className={`group flex flex-col  lg:flex-row self-start h-full
       ${idx % 2 === 1 ? " lg:self-end" : "lg:self-start"} 
       
-      ${isOpen ? "gap-10" : "gap-5"}
-      transition-all duration-300 cursor-pointer w-full`}
+      ${isOpen ? "gap-10 bg-black/25 pr-8" : "gap-5"}
+      transition-all duration-300 cursor-pointer w-full
+      rounded-3xl
+      `}
       onClick={() => cardOpenCb(isOpen ? null : idx)}
     >
       <div className={`w-full ${isOpen ? "max-w-lg" : "max-w-xs"}   `}>

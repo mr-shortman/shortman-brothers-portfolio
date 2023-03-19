@@ -1,15 +1,10 @@
-import React, { Suspense, useState, useEffect } from "react";
-
+import React from "react";
 import { motion } from "framer-motion";
-import { styles } from "../../../style";
-
-import { fallbackScene } from "../../../utils/spline";
-import LoadLazy3D from "../../LoadLazy3D";
-import { slideIn } from "../../../utils/motion";
-const Spline = React.lazy(() => import("@splinetool/react-spline"));
-
-import { web_developer } from "../../../assets";
 import Lottie from "lottie-react";
+
+import { styles } from "../../../style";
+import { slideIn } from "../../../utils/motion";
+import { web_developer } from "../../../assets";
 
 const TRANSITION_DURATION = 0.5;
 const TRANSITION_DELAY = 0.5;
@@ -123,7 +118,7 @@ function Hero({ data }) {
       <Lottie
         animationData={web_developer}
         loop={true}
-        className="w-full max-w-6xl opacity-10  mt-40 md:mt-0 scale-[200%] md:scale-150 "
+        className="w-full max-w-6xl opacity-10  md:mt-40 scale-[200%] md:scale-150 "
       />
       <div className="w-full h-full bg-gradient-to-b from-black via-transparent to-transparent absolute z-0 top-0 left-0" />
 
