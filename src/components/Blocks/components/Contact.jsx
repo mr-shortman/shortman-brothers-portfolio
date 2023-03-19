@@ -110,19 +110,17 @@ const Form = ({ emailTo, scene }) => {
           </button>
         </form>
       </motion.div>
-      <LoadLazy3D delay={10000}>
-        <motion.div
-          className="w-full xl:flex-1 h-[450px] md:h-[650px]  "
-          variants={slideIn("right", "tween", 0, 2, 1)}
-        >
-          <Suspense fallback={<div>Loading...</div>}>
-            <Spline
-              className="opacity-50"
-              scene={`${scene ? scene : fallbackScene}`}
-            />
-          </Suspense>
-        </motion.div>
-      </LoadLazy3D>
+      <motion.div
+        className="w-full xl:flex-1 h-[450px] md:h-[650px]  "
+        variants={slideIn("right", "tween", 0, 2, 1)}
+      >
+        <Suspense fallback={<div>Loading...</div>}>
+          <Spline
+            className="opacity-50"
+            scene={`${scene ? scene : fallbackScene}`}
+          />
+        </Suspense>
+      </motion.div>
     </div>
   );
 };

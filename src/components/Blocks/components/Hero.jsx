@@ -118,7 +118,7 @@ function Hero({ data }) {
       <Lottie
         animationData={web_developer}
         loop={true}
-        className="w-full max-w-6xl opacity-10  md:mt-40 scale-[200%] md:scale-150 "
+        className="w-full max-w-6xl opacity-10 right-0 absolute  bottom-0 md:top-0 "
       />
       <div className="w-full h-full bg-gradient-to-b from-black via-transparent to-transparent absolute z-0 top-0 left-0" />
 
