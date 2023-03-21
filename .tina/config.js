@@ -50,6 +50,12 @@ const schema = defineSchema({
           if (document._sys.filename === "home") {
             return `/`;
           }
+          if (document._sys.filename === "pablo") {
+            return `/pablo`;
+          }
+          if (document._sys.filename === "vico") {
+            return `/vico`;
+          }
           return undefined;
         },
       },

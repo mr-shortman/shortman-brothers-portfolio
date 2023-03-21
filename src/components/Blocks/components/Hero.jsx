@@ -100,17 +100,6 @@ const interactivity = {
 };
 
 function Hero({ data }) {
-  // const [load3D, setLoad3d] = useState(false);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoad3d(true);
-  //   }, 5000);
-
-  //   return () => {
-  //     load3D;
-  //   };
-  // }, []);
-
   return (
     <section
       className={`relative w-full  bg-cover bg-no-repeat flex justify-end h-screen`}
@@ -140,7 +129,7 @@ function Hero({ data }) {
           />
         </div>
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
+          <h1 className={`${styles.heroHeadText} text-white max-w-md`}>
             <motion.span
               initial="hidden"
               animate={"show"}
@@ -148,6 +137,7 @@ function Hero({ data }) {
             >
               {data?.title}
             </motion.span>
+            {/* <br /> */}
             <motion.span
               initial="hidden"
               animate={"show"}
