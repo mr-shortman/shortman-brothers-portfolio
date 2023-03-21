@@ -16,10 +16,10 @@ const Layout = ({ children, pageTitle }) => (
     }}
     className="relative  bg-primary"
   >
-    <Navbar pageTitle={pageTitle} />
+    {/* <Navbar pageTitle={pageTitle} /> */}
     <PageProgressNavBar />
     <MouseBlob />
-    <main className="z-20">{children}</main>
+    <main className="z-20 min-h-screen">{children}</main>
   </motion.div>
 );
 export default Layout;
