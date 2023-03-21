@@ -17,7 +17,7 @@ const NAVIGATOR = [
   },
   {
     label: "Vico",
-    path: "/",
+    path: "/vico",
     color: "#ffffff",
     bg: "#236DDD",
   },

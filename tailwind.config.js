@@ -60,5 +60,16 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#fec046",
+          "primary-focus": "#cc9412",
+          "primary-content": "#fbbd43",
+        },
+      },
+    ],
+  },
+  plugins: [require("daisyui")],
 };

@@ -22,7 +22,7 @@ export default index;
 
 export const getStaticProps = async () => {
   const { data, query, variables } = await client.queries.page({
-    relativePath: "home.mdx",
+    relativePath: "pablo.mdx",
   });
 
   return {

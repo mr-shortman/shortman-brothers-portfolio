@@ -71,6 +71,7 @@ const Form = ({ emailTo, scene }) => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Dein Name</span>
             <input
+              required
               type="text"
               name="name"
               value={form.name}
@@ -82,17 +83,20 @@ const Form = ({ emailTo, scene }) => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Deine Email</span>
             <input
+              required
               type="email"
               name="email"
               value={form.email}
               placeholder="Was ist deine Email?"
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary text-white outline-none border-none font-medium"
+              className="input input-bordered input-black-200 w-full "
+              // className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary text-white outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Dein Name</span>
             <textarea
+              required
               rows={7}
               name="message"
               value={form.message}

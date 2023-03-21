@@ -32,6 +32,7 @@ const OffsetCard = ({
   isMobile,
 }) => {
   const isOpen = openCard === idx;
+
   return (
     <motion.div
       variants={cardTransformVariants(isMobile)}
