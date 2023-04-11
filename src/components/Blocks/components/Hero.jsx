@@ -160,16 +160,6 @@ function Hero({ data }) {
           </motion.p>
         </div>
       </div>
-      {/* <motion.div initial="hidden" animate={"show"} variants={graph3dVariants}>
-        <LoadLazy3D delay={5000}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Spline
-              scene={`${data?.splineScene ? data.splineScene : fallbackScene}`}
-              className="absolute top-40 right-0 lg:-right-96 md:-right-40 w-full md:w-1/2 scale-50  md:scale-75 lg:scale-100"
-            />
-          </Suspense>
-        </LoadLazy3D>
-      </motion.div> */}
 
       <div className="absolute xs:bottom-2 bottom-32 w-full flex justify-center items-center">
         <a href={`${data?.scrollCTA ? data.scrollCTA : "/"}`}>
