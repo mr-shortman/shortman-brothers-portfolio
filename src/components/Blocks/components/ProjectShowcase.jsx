@@ -13,7 +13,10 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
     "pink-text-gradient",
   ];
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="cursor-none group"
+    >
       <Tilt
         options={{
           max: 20,
@@ -56,8 +59,12 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
           </div>
         </div>
         <div className="mt-5 ">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-white group-hover:text-secondary transition-colors duration-300 font-bold text-[24px]">
+            {name}
+          </h3>
+          <p className="mt-2 text-secondary group-hover:text-white transition-colors duration-300 text-[14px]">
+            {description}
+          </p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {tags
@@ -94,10 +101,13 @@ function ProjectShowcase({ data }) {
           {data?.description}
         </motion.p>
       </div>
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 items-center">
         {data?.projects?.map((project, idx) => (
           <ProjectCard key={`project-${idx}`} {...project} index={idx} />
         ))}
+        <div className="text-secondary/50  cursor-wait">
+          More projects and live <br /> preview coming soon...
+        </div>
       </div>
     </>
   );

@@ -154,7 +154,7 @@ function Hero({ data }) {
               TRANSITION_DELAY * 4,
               TRANSITION_DURATION
             )}
-            className={`${styles.heroSubText} mt-2 text-white-100`}
+            className={`${styles.heroSubText} mt-2 text-secondary max-w-xl w-full `}
           >
             {data?.description}
           </motion.p>

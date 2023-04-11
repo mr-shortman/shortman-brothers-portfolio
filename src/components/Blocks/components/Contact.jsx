@@ -69,40 +69,39 @@ const Form = ({ emailTo, scene }) => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Dein Name</span>
+            <span className="text-white font-medium mb-4">Your Name</span>
             <input
               required
               type="text"
               name="name"
               value={form.name}
-              placeholder="Wie ist dein Name?"
+              placeholder="What`s your name?"
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary text-white outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary placeholder:text-xs text-white outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Deine Email</span>
+            <span className="text-white font-medium mb-4">Your Email</span>
             <input
               required
               type="email"
               name="email"
               value={form.email}
-              placeholder="Was ist deine Email?"
+              placeholder="What`s your Email?"
               onChange={handleChange}
-              className="input input-bordered input-black-200 w-full "
-              // className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary text-white outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary placeholder:text-xs text-white outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Dein Name</span>
+            <span className="text-white font-medium mb-4">Message</span>
             <textarea
               required
               rows={7}
               name="message"
               value={form.message}
-              placeholder="Wie willst du sagen?"
+              placeholder="Leave a message here."
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary text-white outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 rounded-lg placeholder:text-secondary placeholder:text-xs text-white outline-none border-none font-medium"
             />
           </label>
 
@@ -110,7 +109,7 @@ const Form = ({ emailTo, scene }) => {
             type="submit"
             className=" bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
-            {loading ? "absenden..." : "Absenden"}
+            {loading ? "loading..." : "submit"}
           </button>
         </form>
       </motion.div>

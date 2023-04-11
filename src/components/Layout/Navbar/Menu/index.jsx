@@ -224,7 +224,7 @@ function Menu() {
     <>
       <div className="flex stroke-black-200 ">
         {/* S */}
-        <div className="relative group" onClick={() => setShowMenu("open")}>
+        <div className="relative group">
           <motion.svg
             className="h-6 absolute -left-8 group-hover:opacity-0 transition-opacity duration-300"
             viewBox="0 0 106 102"
