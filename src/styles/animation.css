@@ -45,8 +45,7 @@
 }
 
 .mouse-blob-blur {
-  height: 100%;
-  width: 100%;
+  @apply w-screen h-screen;
   left: 0;
   top: 0;
   position: fixed;

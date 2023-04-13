@@ -14,7 +14,7 @@ const Layout = ({ children, pageTitle }) => (
       stiffness: 260,
       damping: 20,
     }}
-    className="relative  bg-primary"
+    className="relative  bg-primary overflow-x-hidden"
   >
     <Navbar pageTitle={pageTitle} />
     <PageProgressNavBar />
