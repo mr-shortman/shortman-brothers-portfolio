@@ -11,10 +11,6 @@ Install the project's dependencies:
 ```
 npm install
 ```
-or
-```
-yarn install
-```
 
 Run the project locally:
 
