@@ -9,13 +9,17 @@ Please feel free to fork [this branch](https://github.com/mr-shortman/shortman-b
 Install the project's dependencies:
 
 ```
+npm install
+```
+or
+```
 yarn install
 ```
 
 Run the project locally:
 
 ```
-yarn dev
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
