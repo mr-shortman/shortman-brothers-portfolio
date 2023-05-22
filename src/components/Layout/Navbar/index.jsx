@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import { styles } from "../../../style";
-import { navLinks } from "../../../constants";
-import { logo, menu, close } from "../../../assets";
 import Menu from "./Menu";
 import { motion } from "framer-motion";
 
-const Navbar = ({ pageTitle }) => {
+const Navbar = () => {
   return (
     <motion.nav
       whileHover={{ background: "transparent" }}

@@ -12,7 +12,10 @@ const index = (props) => {
   });
 
   return (
-    <Layout pageTitle={data?.page?.pageTitle}>
+    <Layout
+      pageTitle={data?.page?.pageTitle}
+      pageDescription={data?.page?.pageDescription}
+    >
       <SectionBlocks blocks={data.page?.sectionBlocks} />
     </Layout>
   );

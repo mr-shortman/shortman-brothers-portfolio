@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import PageProgressNavBar from "./PageProgressNavBar";
 import MouseBlob from "./MouseBlob";
+import Head from "next/head";
 
-const Layout = ({ children, pageTitle }) => (
+const Layout = ({ children, pageTitle, pageDescription }) => (
   <motion.div
     initial={{ x: 300, opacity: 0 }}
     animate={{ x: 0, opacity: 1 }}
@@ -16,7 +17,11 @@ const Layout = ({ children, pageTitle }) => (
     }}
     className="relative  bg-primary overflow-x-hidden"
   >
-    <Navbar pageTitle={pageTitle} />
+    <Head>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+    </Head>
+    <Navbar />
     <PageProgressNavBar />
     <MouseBlob />
     <main className="z-20">{children}</main>
