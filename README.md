@@ -1,4 +1,4 @@
-# Portfolio Website with Next.js and TinaCMS
+## Portfolio Website with Next.js and TinaCMS
 
 This repository contains a professional portfolio website built using Next.js, TinaCMS, and TailwindCSS. The portfolio showcases your skills, projects, and experiences in an elegant and interactive manner.
 
