@@ -6,15 +6,15 @@ Please feel free to fork [this branch](https://github.com/mr-shortman/shortman-b
 
 To successfully deploy the project rename 
 
-´´´
+```
 .env.example
-´´´ 
+``` 
 
 file to 
 
-´´´
+```
 .env. 
-´´´
+```
 
 Review the variables listed in the .env file and provide the necessary values for each variable.
 
