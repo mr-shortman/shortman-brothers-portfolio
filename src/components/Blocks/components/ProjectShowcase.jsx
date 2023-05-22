@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../../../style";
 import { github, link } from "../../../assets";
 import { fadeIn, textVariant } from "../../../utils/motion";
+import Image from "next/image";
 
 const ProjectCard = ({ index, name, description, tags, image, links }) => {
   const tagColors = [
@@ -35,12 +36,14 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
             {links?.github ? (
               <div
                 onClick={() => window.open(links.github, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                className="black-gradient w-8 h-8 rounded-full flex justify-center items-center cursor-pointer"
               >
-                <img
-                  src={github}
+                <Image
+                  src={github.src}
+                  width={26}
+                  height={26}
                   alt={"github"}
-                  className="w-1/2 h-1/2 object-contain"
+                  className="object-contain"
                 />
               </div>
             ) : null}
@@ -49,10 +52,12 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
                 onClick={() => window.open(links.live, "_blank")}
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
               >
-                <img
-                  src={link}
+                <Image
+                  src={link.src}
+                  width={26}
+                  height={26}
                   alt={"live"}
-                  className="w-1/2 h-1/2 object-contain"
+                  className="object-contain"
                 />
               </div>
             ) : null}
