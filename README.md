@@ -5,9 +5,12 @@ This repository contains a professional portfolio website built using Next.js, T
 Please feel free to fork [this branch](https://github.com/mr-shortman/shortman-brothers-portfolio/tree/singlepage_production_pablo) in order to obtain a production-ready, single-page portfolio.
 
 To successfully deploy the project rename 
+
 ´´´
 .env.example
-´´´ file to 
+´´´ 
+
+file to 
 
 ´´´
 .env. 
