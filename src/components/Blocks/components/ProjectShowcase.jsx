@@ -16,7 +16,7 @@ const ProjectCard = ({ index, name, description, tags, image, links }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
-      className="cursor-none group"
+      className="group"
     >
       <Tilt
         options={{
